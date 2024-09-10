@@ -3,5 +3,5 @@
 !ex02
 
 !.gitignore
-ex00/Makefile
-ex00/megaphone.cpp
+!ex00/Makefile
+!ex00/megaphone.cpp

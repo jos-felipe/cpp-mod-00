@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/09 17:17:31 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/10 12:57:15 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,8 @@ faultcheck: all
 	valgrind -s --track-origins=yes ./${NAME} ${ARGS}
 
 run: all
-	./${NAME} ${ARGS}
-
+	./${NAME} "shhhhh... I think the students are asleep..."
+	./${NAME} Damnit " ! " "Sorry students, I thought this thing was off."
+	./${NAME}
 
 .PHONY: all clean fclean re debug print memcheck faultcheck run
