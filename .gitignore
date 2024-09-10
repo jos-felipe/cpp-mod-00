@@ -1,7 +1,14 @@
 /*
-!ex01
 !ex02
 
 !.gitignore
+
 !ex00/Makefile
 !ex00/megaphone.cpp
+
+!ex01/include/contact.hpp
+!ex01/include/phonebook.hpp
+!ex01/src/contact.cpp
+!ex01/src/main.cpp
+!ex01/src/phonebook.cpp
+

@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/10 12:57:15 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/10 13:09:09 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ ARGS =
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-# Build a separate executable for debugging proposes
+# Build a separate executable for debugging purposes
 DFLAGS = -g3
 ifdef WITH_DEBUG
   NAME = ${PROGRAM_NAME}_debug
@@ -56,7 +56,7 @@ ${OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp ${INCLUDE_PATH}
 
 # Link the executable
 ${NAME}: ${OBJ_PATH}
-	${CC} ${CFLAGS} -o ${NAME} ${OBJ_PATH} -pthread
+	${CC} ${CFLAGS} -o ${NAME} ${OBJ_PATH}
 
 # Clean object files
 clean:
