@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/10 13:09:00 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/16 15:23:56 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ ifdef WITH_DEBUG
 endif
 
 # Header files
-INCLUDE_DIR = ./include
-INCLUDE = contact.hpp phonebook.hpp
+INCLUDE_DIR = include
+INCLUDE = Contact.hpp Phonebook.hpp
 INCLUDE_PATH = ${addprefix $(INCLUDE_DIR)/, $(INCLUDE)}
 
 # Source files
@@ -88,8 +88,6 @@ faultcheck: all
 	valgrind -s --track-origins=yes ./${NAME} ${ARGS}
 
 run: all
-	./${NAME} "shhhhh... I think the students are asleep..."
-	./${NAME} Damnit " ! " "Sorry students, I thought this thing was off."
 	./${NAME}
 
 .PHONY: all clean fclean re debug print memcheck faultcheck run
