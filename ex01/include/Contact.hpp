@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 13:15:55 by josfelip          #+#    #+#             */
-/*   Updated: 2024/09/16 16:05:25 by josfelip         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:04:32 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ public:
 	std::string	getNickname(void) const;
 	std::string	getPhoneNumber(void) const;
 	std::string	getDarkestSecret(void) const;
-	void		displayInfo(void) const;
-	
-	bool	setFirstName(std::string input);
-	bool	setLastName(std::string input);
-	bool	setNickname(std::string input);
-	bool	setPhoneNumber(std::string input);
-	bool	setDarkestSecret(std::string input);
+	std::string	getInput(std::string prompt);
+	void		displayContactInfo(void) const;
+	void		setContactInfo(void);
 
 private:
 	std::string	_firstName;
