@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:00:13 by josfelip          #+#    #+#             */
-/*   Updated: 2024/09/17 15:08:37 by josfelip         ###   ########.fr       */
+/*   Updated: 2024/09/18 14:51:56 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	Contact::setContactInfo(void)
 	this->_nickname = getInput("Enter nickname: ");
 	this->_phoneNumber = getInput("Enter phone number: ");
 	this->_darkestSecret = getInput("Enter darkest secret: ");
-	std::cout << "Contact has been saved.\n" << std::endl;
 }
 
 void	Contact::displayContactInfo(void) const
