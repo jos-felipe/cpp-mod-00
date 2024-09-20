@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:31:13 by josfelip          #+#    #+#             */
-/*   Updated: 2024/09/18 15:47:35 by josfelip         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:14:43 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <limits>
 #include <iomanip>
+#include <cstdlib>
 
 PhoneBook::PhoneBook(void) : _contactCount(0), _currentIndex(0)
 {
@@ -71,7 +72,7 @@ void	PhoneBook::_displayContactTable(void) const {
 	for (int i = 0; i < _contactCount; i++)
 	{
 		std::cout << "|" << std::setw(10) << std::right << i << "|";
-		std::cout << std::setw(10) << i << "|";
+		// std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << _truncateData(_contacts[i].getFirstName()) << "|";
 		std::cout << std::setw(10) << _truncateData(_contacts[i].getLastName()) << "|";
 		std::cout << std::setw(10) << _truncateData(_contacts[i].getNickname()) << std::endl;
@@ -97,7 +98,7 @@ std::string	PhoneBook::_truncateData(std::string data) const
 	if (data.length() > 10)
 	{
 		trunc_data = data.substr(0, 10);
-		trunc_data.replace(9, 1, ".");
+		trunc_data.replace(10, 1, ".");
 		return (trunc_data);
 	}
 	return (data);

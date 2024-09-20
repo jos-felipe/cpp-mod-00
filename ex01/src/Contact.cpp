@@ -6,11 +6,12 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:00:13 by josfelip          #+#    #+#             */
-/*   Updated: 2024/09/18 14:51:56 by josfelip         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:03:19 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <cstdlib>
 
 Contact::Contact(std::string empty) :
 	_firstName(empty),
@@ -64,8 +65,10 @@ std::string	Contact::getInput(std::string prompt)
 	do {
 		std::cout << prompt;
 		if (!std::getline(std::cin, input)) {
-			std::cout << "\nEnd of File has been detected. Exiting." << std::endl;
-			exit(0);
+			if (std::cin.eof()) {
+				std::cout << "\nEOF detected. Exiting program." << std::endl;
+				exit(0);
+			}
 		}
 		if (input.empty()) {
 			std::cout << "Input cannot be empty. Please, try again." << std::endl;

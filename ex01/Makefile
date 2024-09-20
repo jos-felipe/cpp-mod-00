@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/17 13:59:36 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/20 13:57:42 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,13 @@ ifdef WITH_DEBUG
 endif
 
 # Header files
-INCLUDE_DIR = include
-INCLUDE = Contact.hpp Phonebook.hpp
+INCLUDE_DIR = ./include
+INCLUDE = Contact.hpp PhoneBook.hpp
 INCLUDE_PATH = ${addprefix $(INCLUDE_DIR)/, $(INCLUDE)}
 
 # Source files
-SRC_DIR = src
-SRC = Contact.cpp main.cpp phonebook.cpp
+SRC_DIR = ./src
+SRC = Contact.cpp main.cpp PhoneBook.cpp
 SRC_PATH = ${addprefix $(SRC_DIR)/, $(SRC)}
 
 # Object files
