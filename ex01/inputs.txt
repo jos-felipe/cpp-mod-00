@@ -1,0 +1,11 @@
+ADD
+José Felipe
+Stieven
+josfelip
+012345678910
+*********
+SEARCH
+0
+SEARCH
+1
+EXIT

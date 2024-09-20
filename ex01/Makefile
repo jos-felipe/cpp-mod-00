@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/20 13:57:42 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/20 14:39:22 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,6 @@ faultcheck: all
 	valgrind -s --track-origins=yes ./${NAME} ${ARGS}
 
 run: all
-	./${NAME}
+	./${NAME} < inputs.txt
 
 .PHONY: all clean fclean re debug print memcheck faultcheck run

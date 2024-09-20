@@ -6,16 +6,14 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:31:13 by josfelip          #+#    #+#             */
-/*   Updated: 2024/09/20 14:14:43 by josfelip         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:49:09 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include "PhoneBook.hpp"
-#include <sstream>
 #include <iostream>
-#include <limits>
 #include <iomanip>
 #include <cstdlib>
 
@@ -42,8 +40,8 @@ int	PhoneBook::addContact(void)
 
 void PhoneBook::searchContact() const
 {
-	std::string input;
-	size_t	index_value;
+	std::string	input;
+	int			index_value;
 	
 	if (_contactCount == 0)
 	{
@@ -56,7 +54,7 @@ void PhoneBook::searchContact() const
 	if (input.length() ==  1)
 	{
 		index_value = atoi(input.c_str());
-		if (index_value < 8 && index_value >= 0)
+		if (index_value < _contactCount && index_value >= 0)
 		{
 			_contacts[index_value].displayContactInfo();
 			return ;
@@ -72,10 +70,9 @@ void	PhoneBook::_displayContactTable(void) const {
 	for (int i = 0; i < _contactCount; i++)
 	{
 		std::cout << "|" << std::setw(10) << std::right << i << "|";
-		// std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << _truncateData(_contacts[i].getFirstName()) << "|";
 		std::cout << std::setw(10) << _truncateData(_contacts[i].getLastName()) << "|";
-		std::cout << std::setw(10) << _truncateData(_contacts[i].getNickname()) << std::endl;
+		std::cout << std::setw(10) << _truncateData(_contacts[i].getNickname()) << "|" << std::endl;
 	}
 	_insertFooter();
 }
@@ -86,8 +83,9 @@ void	PhoneBook::_insertFooter(void) const {
 }
 
 void	PhoneBook::_insertHeader(void) const {
+	std::cout << std::endl;
 	std::cout << "_____________________________________________" << std::endl;
-	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME" << std::endl;
+	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 }
 
