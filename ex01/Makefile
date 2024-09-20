@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 12:34:41 by josfelip          #+#    #+#              #
-#    Updated: 2024/09/20 14:39:22 by josfelip         ###   ########.fr        #
+#    Updated: 2024/09/20 15:14:06 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 	${RM} ${NAME}_debug
+	${RM} mem_check.sh
 
 # Rebuild everything
 re: fclean all
@@ -81,11 +82,12 @@ print:
 	@echo "OBJ_PATH: ${OBJ_PATH}"
 
 memcheck: all
-	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind.log ./${NAME} ${ARGS}
-	sh qa/mem_check.sh
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind.log ./${NAME} < inputs.txt
+	@wget -nc https://raw.githubusercontent.com/jos-felipe/sdk/refs/heads/main/qa/mem_check.sh > /dev/null 2>&1
+	@sh mem_check.sh
 
 faultcheck: all
-	valgrind -s --track-origins=yes ./${NAME} ${ARGS}
+	valgrind -s --track-origins=yes ./${NAME} < inputs.txt
 
 run: all
 	./${NAME} < inputs.txt
